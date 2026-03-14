@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "asd-2026"
+version = "0.1.0"
+description = ""
+authors = ["Piotr Marecki <pmarecki@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pydantic = "^2.12.5"
+matplotlib = "^3.10.8"
+seaborn = "^0.13.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
