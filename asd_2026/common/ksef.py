@@ -24,14 +24,26 @@ def ksef2(data) -> int:
     return ss
 
 
+def random_access(data):
+    k = 0
+    ll = len(data)
+    ss = 0
+    while k < ll:
+        ss += data[k]
+        k += 100
+    return ss
+
+
 if __name__ == '__main__':
     n = 200
     results = []
     x = []
-    while n < 10**4:
+    while n < 10**5:
         print(f'generating {n} numbers')
         data = list(range(n))
-        zz = benchmark(ksef2, data, n_threads=8, repetitions=80)
+        data = deque(data)
+        # here create data as either: a list, or a deque
+        zz = benchmark(random_access, data, n_threads=8, repetitions=80)
         # zz = (n, n*0.9, n*1.1)
         results.append(DataPoint(mean=zz[0], lower=zz[1], upper=zz[2]))
         x.append(n)
