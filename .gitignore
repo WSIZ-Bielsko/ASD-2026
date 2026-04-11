@@ -2,6 +2,7 @@ sandbox
 .env
 
 __pycache__
+assets
 
 # IntelliJ project files
 .idea
