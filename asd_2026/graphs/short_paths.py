@@ -37,7 +37,7 @@ def get_near_neighbors(graph: dict[int, list[int]], start: int, depth: int, visi
         return
     for neighbor in graph[start]:
         # if neighbor in visited:
-        #     continue
+        #     continue (won't allow to enter node if shorter path found)
         get_near_neighbors(graph, neighbor, depth-1, visited)
     return visited
 
