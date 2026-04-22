@@ -46,6 +46,7 @@ def get_near_neighbors(graph: dict[int, list[int]], start: int, depth: int, visi
 
 
 if __name__ == '__main__':
+    # g[src]: all edges outgoing from src, with "wieghts" (e.g. distances)
     g: dict[int, list[Edge]] = {
         0: [Edge(1, 4), Edge(7, 8)],
         1: [Edge(0, 4), Edge(2, 8), Edge(7, 11)],
@@ -58,15 +59,18 @@ if __name__ == '__main__':
         8: [Edge(2, 2), Edge(6, 6), Edge(7, 7)]
     }
 
-    gg = get_neighbors(g)
+    # just id's of neighbors (no weights)
+    gg: dict[int, list[int]] = get_neighbors(g)
 
     vis = set()
+    # try to find all nodes reachable from 0, with depth at most 2
     get_near_neighbors(gg, start=0, depth=2, visited=vis)
     print('visited=',sorted(list(vis)))
 
 
     print(gg)
     N = len(g)
+    # recompute graph to matrix representation; m[src][dst] = weight or INF=9999 (no path)
     m = get_matrix(g)
     print_matrix(m)
 
