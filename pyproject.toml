@@ -12,6 +12,8 @@ matplotlib = "^3.10.8"
 seaborn = "^0.13.2"
 pympler = "^1.1"
 pytest = "^9.0.2"
+sortedcontainers = "^2.4.0"
+btrees = "^6.4"
 
 
 [build-system]

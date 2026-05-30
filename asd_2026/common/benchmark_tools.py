@@ -73,7 +73,7 @@ def format_median(res):
 
 if __name__ == '__main__':
     st = ts()
-    n = 8 * 10 ** 6
+    n = 1 * 10 ** 6
     # d = get_dataset(n, 100)
     # print(f'generating {n} numbers took {duration(st)}s')
 
